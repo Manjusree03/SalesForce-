@@ -1,0 +1,20 @@
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.login-block{
+    background: #DE6262;  
+background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  
+background: linear-gradient(to bottom, #FFB88C, #DE6262); 
+float:left;
+width:100%;
+padding : 90px 0;
+}
+
+.container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.login-sec{padding: 50px 30px; position:relative;}
+.login-sec .copy-text{position:absolute; width:80%; bottom:50px; font-size:13px; text-align:center;}
+.login-sec .copy-text i{color:#FEB58A;}
+.login-sec .copy-text a{color:#E36262;}
+.login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: #DE6262;}
+.login-sec h2:after{content:" "; width:100px; height:8px; background:#FEB58A; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
+.btn-login{background: #DE6262; color:#fff; font-weight:600; align-items: center;}
+
+

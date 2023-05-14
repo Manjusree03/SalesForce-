@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+<section class="login-block">
+    <div class="container">
+  <div class="row">
+    <div class="col login-sec">
+        <h2 class="text-center">Register Now</h2>
+        <form class="login-form" action=""
+            #f="ngForm"
+            novaliadte
+            (ngSubmit)="f.form.valid&&onSubmit()">
+            <div class="form-group">
+               <label for="exampleInputEmail1" class="text-uppercase">Name</label>
+ 
+               <input type="text" class="form-control" name="name" id="" placeholder="Name" [(ngModel)]="formdata.name" #name="ngModel" required >
+               <span class="text-danger"  *ngIf="this.submit&&name.errors?.['required']">
+                   Name is required.
+               </span>
+            </div>
+            <div class="form-group">
+    <label for="exampleInputEmail1" class="text-uppercase">EMAIL</label>
+    <input type="text" class="form-control" name="email" placeholder="Email" [(ngModel)] ="formdata.email" #email="ngModel" required>
+    <span class="text-danger"  *ngIf="this.submit&&email.errors?.['required']">
+        Email is required.
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)] ="formdata.password" #password="ngModel" required minlength="8" >
+    <span class="text-danger"  *ngIf="this.submit&&password.errors?.['required']">
+        Password is required.
+    </span>
+    <span class="text-danger" *ngIf="this.submit&&password.errors?.['minlength']"  >
+      Minimum length of password is 8 characters.
+  </span>
+</div>
+<div class="form-group">
+  
+   <span class="text-danger" *ngIf="this.errorMessage" >
+      <p [innerText]="this.errorMessage"></p>
+   </span>
+    <div  class="text-center" *ngIf="this.loading">
+        <div class="spinner-border text-primary " role="status">
+        <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+   
+    <input  type="submit" class="btn btn-login float-right" [disabled]="this.loading" value="Register" (click)="submit=true" [disabled]="this.loading">
+</div>
+<div class="clearfix"></div>
+<div class="form-group">
+   Already have account ? Please  <a  href="javascript:void(0);" routerLink="/login">Login</a>
+</div>
+  
+    
+    
+
+  
+</form>
+<div class="copy-text"> <i ></i> </div>
+    </div>
+    <div class="col-md-8 banner-sec">
+            
+  
+      <img class="d-block img-fluid" src="https://dataconomy.com/wp-content/uploads/2023/01/stock-prediction-machine-learning.jpg" alt="First slide" height="100%">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="banner-text">
+            
+            
+         
+  </div>
+    </div>
+   
+    
+            </div>     
+        
+    </div>
+  </div>
+  </section>

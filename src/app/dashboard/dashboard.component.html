@@ -1,0 +1,51 @@
+<head>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxx" crossorigin="anonymous" />
+
+</head>
+
+<app-navbar></app-navbar>
+
+<section class="login-block">
+  <div class="container">
+    <div class="row">
+      <div class="col login-sec">
+        <h2 class="text-center" style="padding-top: 4%;">Upload your File</h2>
+        <br>
+        <form (ngSubmit)="onSubmit()" enctype="multipart/form-data" style="margin-left: 4%; margin-top: 2%;">
+          <div class="form-group">
+            <label for="csvFile" style="font-weight: 500;">CSV File:</label>
+            <div class="custom-file">
+              <input type="file" accept=".csv" class="custom-file-input" id="csvFile" (change)="onFileSelected($event)" #csvFileInput>
+              <label class="custom-file-label" for="csvFile">Choose file</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="periodicity" style="font-weight: 500;">Select periodicity:</label>
+            <select name="periodicity" id="periodicity" class="form-control" (change)="onPeriodicityChange($event)">
+              <option value="D">Days</option>
+              <option value="W">Weeks</option>
+              <option value="M">Months</option>
+              <option value="Y">Years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="periods" style="font-weight: 500;">Enter number of periods:</label>
+            <input type="number" name="periods" id="periods" class="form-control" (change)="onPeriodsChange($event)">
+          </div>
+          <div class="form-group">
+            <div id="timer" style="display:inline-block;"><i class="fas fa-stopwatch"></i> 2.00</div>
+          </div>
+          <button type="submit" class="btn btn-primary" value="Predict" (click)="onSubmit()">Submit</button>
+        </form>
+        <div class="copy-text"> <i ></i> </div>
+      </div>
+      <div class="col-md-8 banner-sec">
+        <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <div class="banner-text"></div>
+        </div>
+      </div>     
+    </div>
+  </div>
+</section> 
